@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 class Item {
 	int id;
 	String name;
@@ -50,4 +53,27 @@ class Item {
 		double ddv = a*(price/100);
 	return 15*(ddv/100);
 	}
+}
+
+class Receipt{
+
+    List<Item> lista = new ArrayList<Item>();
+
+    public Receipt(List<Item> lista) {
+        this.lista = lista;
+    }
+
+    double totalPrice () {
+        double iznos = 0;
+        for (Item i : lista) {
+            iznos += i.getPrice();
+        }
+        return iznos;
+    }
+
+    double vkupnoDDV (){
+        double d = i.getA()*(totalPrice()/100);
+        double povratddv = 15*(d/100);
+    return povratddv;
+    }
 }
